@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Udo Cirkel (mail@udocirkel.de)
+ * Copyright 2023 Udo Cirkel <mail@udocirkel.de>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,8 +31,8 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@DddPattern(name = "Repository")
 @Documented
+@DddPattern("Repository")
 public @interface DddRepository {
 
     /**
@@ -41,6 +41,18 @@ public @interface DddRepository {
      * 
      * @return a name or an empty string
      */
-    String name() default "";
+    String value() default "";
+
+    String entityName() default "";
+
+    /**
+     * Additional information that is related to the Repository
+     * <p>
+     * The provided information is specified in key-value form, where keys may occur
+     * multiple times
+     * 
+     * @return an array with attribute elements or an empty array
+     */
+    Attribute[] attributes() default {};
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Udo Cirkel (mail@udocirkel.de)
+ * Copyright 2023 Udo Cirkel <mail@udocirkel.de>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,46 +18,79 @@ package io.archplan.ddd.lang.pattern;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Indicates that an annotated class represents an root "Entity" of an
- * "Aggregate" as defined by Domain-Driven Design (Eric Evans, 2003)
+ * Indicates that an annotated class represents the root Entity of an Aggregate
+ * as defined by Domain-Driven Design (Eric Evans, 2003)
+ * <p>
+ * An Aggregate is an abstraction for modeling a group of closely related domain
+ * objects with complex relationships. The purpose of an Aggregate is to treat
+ * related objects as a single unit so that consistency of relationships can be
+ * established according domain rules when data changes.
+ * <p>
+ * <b>Root Entity and Boundary:</b> Each Aggregate has exactly one root Entity.
+ * The root Entity defines the boundary of the Aggregate and thus which Entities
+ * and Value Objects are in the Aggregate. These objects are referred to as
+ * Aggregate members.
+ * <p>
+ * <b>References:</b> Objects that are outside the Aggregate and that hold
+ * references to the Aggregate must reference only the root Entity. Members of
+ * the aggregate may reference each other freely.
+ * <p>
+ * <b>Identity:</b> The root Entity represents a domain object with a global
+ * identity. Whereas, the Aggregate members need only to be distinguishable
+ * within the boundary and therefore have local identities.
+ * <p>
+ * <b>Invariants:</b> The relationships of the domain objects are subject to
+ * business rules. These business rules are also called invariants. Within an
+ * Aggregate the root entity is responsible for applying the business rules when
+ * data changes.
  * 
  * @author Udo Cirkel
  * @since 1.0.0
  * 
  * @see also {@link DddEntity}
  */
-@Target(ElementType.ANNOTATION_TYPE)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@DddPattern(name = "Aggregate Root")
 @Documented
+@Inherited
+@DddPattern("Aggregate Root")
 public @interface DddAggregateRoot {
 
     /**
-     * Name of the Aggregate and its root Entity as defined in the domain model and
-     * ubiquitous language.
+     * Name of the root Entity as defined in the domain model and ubiquitous
+     * language
      * <p>
-     * The name of the Aggregate and its root Entity are identically, since the root
-     * Entity contains the invariants and business logic that keep the Aggregate
-     * members in a consistent state.
+     * The name of the root Entity corresponds to the name of the Aggregate.
      * 
      * @return a name or an empty string
      */
-    String name() default "";
+    String value() default "";
 
     /**
      * Names of all Entities and Value Objects that are Aggregate members, excluding
-     * the root Entity.
+     * the root Entity
      * <p>
      * This information is optional. The membership of an Aggregate should be
      * specified in the annotations to Entities and Value Objects.
      * 
-     * @return a array with names or an empty array
+     * @return an array with names or an empty array
      */
-    String[] memberNames() default {};
+    String[] members() default {};
+
+    /**
+     * Additional information that is related to the Aggregate
+     * <p>
+     * The provided information is specified in key-value form, where keys may occur
+     * multiple times.
+     * 
+     * @return an array with attribute elements or an empty array
+     */
+    Attribute[] attributes() default {};
 
 }
