@@ -63,10 +63,31 @@ import java.lang.annotation.Target;
 public @interface DddAggregateRoot {
 
     /**
+     * Unique identifier of the root Entity
+     * 
+     * @return an identifier or an empty string
+     */
+    String id() default "";
+
+    /**
      * Name of the root Entity as defined in the domain model and ubiquitous
      * language
      * <p>
      * The name of the root Entity corresponds to the name of the Aggregate.
+     * <p>
+     * {@link #value()} is an alias for this attribute.
+     * 
+     * @return a name or an empty string
+     */
+    String name() default "";
+
+    /**
+     * Alias for the {@link #name()} attribute
+     * <p>
+     * Allows a more concise declaration of annotations such as
+     * {@code @DddAggregateRoot("A meaningful name")} instead of
+     * {@code @DddAggregateRoot(name="A meaningful name")}. Only one of these
+     * attributes may be specified.
      * 
      * @return a name or an empty string
      */

@@ -36,14 +36,40 @@ import java.lang.annotation.Target;
 public @interface DddFactory {
 
     /**
+     * Unique identifier of the Factory
+     * 
+     * @return an identifier or an empty string
+     */
+    String id() default "";
+
+    /**
      * Name of the Factory as defined in the domain model and equally in the
      * ubiquitous language.
+     * <p>
+     * {@link #value()} is an alias for this attribute.
+     * 
+     * @return a name or an empty string
+     */
+    String name() default "";
+
+    /**
+     * Alias for the {@link #name()} attribute
+     * <p>
+     * Allows a more concise declaration of annotations such as
+     * {@code @DddFactory("A meaningful name")} instead of
+     * {@code @DddFactory(name="A meaningful name")}. Only one of these attributes
+     * may be specified.
      * 
      * @return a name or an empty string
      */
     String value() default "";
 
-    String entityName() default "";
+    /**
+     * Name of the Aggregate or Entity that is managed by the Factory
+     * 
+     * @return a name or an empty string
+     */
+    String managedObject() default "";
 
     /**
      * Additional information that is related to the Factory

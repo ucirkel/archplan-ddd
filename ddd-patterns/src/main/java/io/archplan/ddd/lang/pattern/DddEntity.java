@@ -43,8 +43,29 @@ import java.lang.annotation.Target;
 public @interface DddEntity {
 
     /**
+     * Unique identifier of the Entity
+     * 
+     * @return an identifier or an empty string
+     */
+    String id() default "";
+
+    /**
      * Name of the Entity as defined in the domain model and equally in the
-     * ubiquitous language.
+     * ubiquitous language
+     * <p>
+     * {@link #value()} is an alias for this attribute.
+     * 
+     * @return a name or an empty string
+     */
+    String name() default "";
+
+    /**
+     * Alias for the {@link #name()} attribute
+     * <p>
+     * Allows a more concise declaration of annotations such as
+     * {@code @DddEntity("A meaningful name")} instead of
+     * {@code @DddEntity(name="A meaningful name")}. Only one of these attributes
+     * may be specified.
      * 
      * @return a name or an empty string
      */
@@ -52,7 +73,7 @@ public @interface DddEntity {
 
     /**
      * Name of the Aggregate of which the Entity is a member, or an empty string if
-     * the entity does not belong to any Aggregate.
+     * the entity does not belong to any Aggregate
      * 
      * @return a name or an empty string
      */

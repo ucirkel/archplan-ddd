@@ -36,12 +36,33 @@ import java.lang.annotation.Target;
 public @interface DddBoundedContext {
 
     /**
+     * Unique identifier of the Bounded Context
+     * 
+     * @return an identifier or an empty string
+     */
+    String id() default "";
+
+    /**
      * Name of the Bounded Context as defined in the domain model and equally in the
      * ubiquitous language.
-     *
-     * @return a non-empty name
+     * <p>
+     * {@link #value()} is an alias for this attribute.
+     * 
+     * @return a name or an empty string
      */
-    String value();
+    String name() default "";
+
+    /**
+     * Alias for the {@link #name()} attribute
+     * <p>
+     * Allows a more concise declaration of annotations such as
+     * {@code @DddBoundedContext("A meaningful name")} instead of
+     * {@code @DddBoundedContext(name="A meaningful name")}. Only one of these
+     * attributes may be specified.
+     * 
+     * @return a name or an empty string
+     */
+    String value() default "";
 
     /**
      * Additional information that is related to the Bounded Context

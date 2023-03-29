@@ -22,7 +22,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-// TODO discuss: External Service vs Infrastructure Service
 /**
  * Indicates that an annotated class represents an "External Service" as defined
  * by Domain-Driven Design (Eric Evans, 2003)
@@ -37,14 +36,41 @@ import java.lang.annotation.Target;
 public @interface DddExternalService {
 
     /**
+     * Unique identifier of the External Service
+     * 
+     * @return an identifier or an empty string
+     */
+    String id() default "";
+
+    /**
      * Name of the External Service as defined in the domain model and equally in
      * the ubiquitous language.
+     * <p>
+     * {@link #value()} is an alias for this attribute.
+     * 
+     * @return a name or an empty string
+     */
+    String name() default "";
+
+    /**
+     * Alias for the {@link #name()} attribute
+     * <p>
+     * Allows a more concise declaration of annotations such as
+     * {@code @DddExternalService("A meaningful name")} instead of
+     * {@code @DddExternalService(name="A meaningful name")}. Only one of these
+     * attributes may be specified.
      * 
      * @return a name or an empty string
      */
     String value() default "";
 
-    String entityName() default "";
+    /**
+     * Names of the Aggregates and Entities that are involved in the External
+     * Service logic
+     * 
+     * @return an array with names or an empty array
+     */
+    String involvedObjects() default "";
 
     /**
      * Additional information that is related to the External Service

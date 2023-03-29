@@ -36,12 +36,41 @@ import java.lang.annotation.Target;
 public @interface DddDomainService {
 
     /**
+     * Unique identifier of the Domain Service
+     * 
+     * @return an identifier or an empty string
+     */
+    String id() default "";
+
+    /**
      * Name of the Domain Service as defined in the domain model and equally in the
      * ubiquitous language.
+     * <p>
+     * {@link #value()} is an alias for this attribute.
+     * 
+     * @return a name or an empty string
+     */
+    String name() default "";
+
+    /**
+     * Alias for the {@link #name()} attribute
+     * <p>
+     * Allows a more concise declaration of annotations such as
+     * {@code @DddDomainService("A meaningful name")} instead of
+     * {@code @DddDomainService(name="A meaningful name")}. Only one of these
+     * attributes may be specified.
      * 
      * @return a name or an empty string
      */
     String value() default "";
+
+    /**
+     * Names of the Aggregates and Entities that are involved in the Domain Service
+     * logic
+     * 
+     * @return an array with names or an empty array
+     */
+    String involvedObjects() default "";
 
     /**
      * Additional information that is related to the Domain Service
