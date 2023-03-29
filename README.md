@@ -1,6 +1,6 @@
-# DDD Patterns
+# DDD patterns
 
-The DDD Patterns library provides Java annotations that indicate the conceptual use of Domain-Driven Design patterns (Eric Evans, 2003).
+The DDD patterns library provides Java annotations to indicate the use of Domain-Driven Design (DDD) patterns (Eric Evans, 2003) in code.
 
 ## License
 
