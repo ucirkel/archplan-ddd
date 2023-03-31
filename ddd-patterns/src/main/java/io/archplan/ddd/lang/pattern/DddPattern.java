@@ -38,7 +38,7 @@ import java.lang.annotation.Target;
 
     /**
      * Name of the Domain-Driven Design (DDD) Pattern as defined in the DDD meta
-     * model and equally in the DDD ubiquitous language.
+     * model and equally in the DDD ubiquitous language
      * 
      * @return a non-empty name
      */

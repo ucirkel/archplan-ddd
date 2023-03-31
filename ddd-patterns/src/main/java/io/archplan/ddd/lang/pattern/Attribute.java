@@ -37,14 +37,14 @@ import java.lang.annotation.Target;
 public @interface Attribute {
 
     /**
-     * A key that identifies the information.
+     * A key that identifies the information
      *
      * @return a non-empty key
      */
     String key();
 
     /**
-     * A value that contains the information.
+     * A value that contains the information
      *
      * @return a non-empty value
      */

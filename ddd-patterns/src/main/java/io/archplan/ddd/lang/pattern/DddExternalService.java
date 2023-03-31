@@ -44,7 +44,7 @@ public @interface DddExternalService {
 
     /**
      * Name of the External Service as defined in the domain model and equally in
-     * the ubiquitous language.
+     * the ubiquitous language
      * <p>
      * {@link #value()} is an alias for this attribute.
      * 

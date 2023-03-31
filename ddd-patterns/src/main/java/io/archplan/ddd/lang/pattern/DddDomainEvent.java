@@ -48,7 +48,7 @@ public @interface DddDomainEvent {
 
     /**
      * Name of the Domain Event as defined in the domain model and equally in the
-     * ubiquitous language.
+     * ubiquitous language
      * <p>
      * {@link #value()} is an alias for this attribute.
      * 
@@ -70,7 +70,7 @@ public @interface DddDomainEvent {
 
     // TODO document operation
     /**
-     * The DDD aggregate, entity or service that emits the domain event.
+     * The DDD aggregate, entity or service that emits the domain event
      * 
      * @return
      */

@@ -44,7 +44,7 @@ public @interface DddBoundedContext {
 
     /**
      * Name of the Bounded Context as defined in the domain model and equally in the
-     * ubiquitous language.
+     * ubiquitous language
      * <p>
      * {@link #value()} is an alias for this attribute.
      * 

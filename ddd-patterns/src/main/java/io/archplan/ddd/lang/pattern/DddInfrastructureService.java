@@ -48,7 +48,7 @@ public @interface DddInfrastructureService {
 
     /**
      * Name of the Infrastructure Service as defined in the domain model and equally
-     * in the ubiquitous language.
+     * in the ubiquitous language
      * <p>
      * {@link #value()} is an alias for this attribute.
      * 

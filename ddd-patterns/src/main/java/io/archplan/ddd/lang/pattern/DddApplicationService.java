@@ -25,6 +25,16 @@ import java.lang.annotation.Target;
 /**
  * Indicates that an annotated class represents an "Application Service" as
  * defined by Domain-Driven Design (Eric Evans, 2003)
+ * <p>
+ * A Service in general is an abstraction for modeling operations that cannot be
+ * clearly assigned to the responsibility of a domain object. A service is the
+ * appropriate place for such operations that, in an object, would compromise
+ * its conceptual clarity and ease of understanding.
+ * <p>
+ * Specifically, an Application Services focus on the interaction with users and
+ * other systems, performs a task that is not relevant to the Domain Layer,
+ * orchestrates more fine-grained operations on Services and Objects in the
+ * Domain Layer and therefore is stateless.
  * 
  * @author Udo Cirkel
  * @since 1.0.0
