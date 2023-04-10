@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Udo Cirkel <mail@udocirkel.de>
+ * Copyright 2023 Udo Cirkel (www.udocirkel.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,17 @@ import java.lang.annotation.Target;
  * Indicates that an annotated class represents an "Infrastructure Service" as
  * defined by Domain-Driven Design (Eric Evans, 2003)
  * <p>
- * Infrastructure Services have no significant meaning in the domain and cover
- * purely technical aspects. Domain and Application Services work together with
- * Infrastructure Services.
+ * A Service in general is an abstraction for modeling operations that cannot be
+ * clearly assigned to the responsibility of a domain object. A Service is the
+ * appropriate place for operations that, in an object, would compromise its
+ * conceptual clarity and ease of understanding. A Service does not hold state
+ * and therefore can easily scale to handle increasing traffic. A Service can
+ * offer a group of related operations that together realize a specific
+ * requirement or goal.
+ * <p>
+ * Specifically, an Infrastructure Service has no significant meaning in the
+ * domain and cover purely technical aspects. Domain and Application Services
+ * work together with Infrastructure Services. TODO
  * 
  * @author Udo Cirkel
  * @since 1.0.0

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Udo Cirkel <mail@udocirkel.de>
+ * Copyright 2023 Udo Cirkel (www.udocirkel.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,23 @@ import java.lang.annotation.Target;
 /**
  * Indicates that an annotated class represents a "Domain Service" as defined by
  * Domain-Driven Design (Eric Evans, 2003)
+ * <p>
+ * A Service in general is an abstraction for modeling operations that cannot be
+ * clearly assigned to the responsibility of a domain object. A Service is the
+ * appropriate place for operations that, in an object, would compromise its
+ * conceptual clarity and ease of understanding. A Service does not hold state
+ * and therefore can easily scale to handle increasing traffic. A Service can
+ * offer a group of related operations that together realize a specific
+ * requirement or goal.
+ * <p>
+ * Specifically, a Domain Service focus on business logic and coordinating tasks
+ * that are closely tied to the domain model. It offers significant domain
+ * functionality and can be reused more easily. A Domain Service can reduce the
+ * complexity of the domain model, which may arise through many Aggregates and
+ * Entities with fine-grained operations, by providing easy-to-use operations.
+ * Clients of the domain model are decoupled from Aggregates and Entities and
+ * only need to pass them as parameters of operations and receive them as
+ * results.
  * 
  * @author Udo Cirkel
  * @since 1.0.0

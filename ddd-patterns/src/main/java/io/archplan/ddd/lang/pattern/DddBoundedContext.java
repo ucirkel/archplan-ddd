@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Udo Cirkel <mail@udocirkel.de>
+ * Copyright 2023 Udo Cirkel (www.udocirkel.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,10 @@ import java.lang.annotation.Target;
 /**
  * Indicates that an annotated package contains implementation of a "Bounded
  * Context" as defined by Domain-Driven Design (Eric Evans, 2003)
+ * <p>
+ * A Bounded Context is an abstraction for limiting the scope of a domain model.
+ * The purpose of a Bounded Context is to define a boundary for a domain model
+ * and ... TODO
  *
  * @author Udo Cirkel
  * @since 1.0.0

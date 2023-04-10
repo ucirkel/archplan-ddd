@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Udo Cirkel <mail@udocirkel.de>
+ * Copyright 2023 Udo Cirkel (www.udocirkel.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,14 +27,18 @@ import java.lang.annotation.Target;
  * defined by Domain-Driven Design (Eric Evans, 2003)
  * <p>
  * A Service in general is an abstraction for modeling operations that cannot be
- * clearly assigned to the responsibility of a domain object. A service is the
- * appropriate place for such operations that, in an object, would compromise
- * its conceptual clarity and ease of understanding.
+ * clearly assigned to the responsibility of a domain object. A Service is the
+ * appropriate place for operations that, in an object, would compromise its
+ * conceptual clarity and ease of understanding. A Service does not hold state
+ * and therefore can easily scale to handle increasing traffic. A Service can
+ * offer a group of related operations that together realize a specific
+ * requirement or goal.
  * <p>
- * Specifically, an Application Services focus on the interaction with users and
- * other systems, performs a task that is not relevant to the Domain Layer,
- * orchestrates more fine-grained operations on Services and Objects in the
- * Domain Layer and therefore is stateless.
+ * Specifically, an Application Service focus on the interaction with users and
+ * as supplier with other systems. It performs tasks that are not relevant to
+ * the Domain Layer. Therefore an Application Service may orchestrate
+ * fine-grained operations on Services and Objects in the Domain Layer and
+ * operations on Services in the Infrastructure Layer.
  * 
  * @author Udo Cirkel
  * @since 1.0.0
