@@ -34,20 +34,19 @@ import java.lang.annotation.Target;
  * <p>
  * <b>Characteristics</b>
  * <p>
- * Root Entity - Each Aggregate consists of a root Entity and related objects.
- * The root Entity defines the boundary of the Aggregate. The objects within the
+ * Root Entity - An Aggregate consists of a root Entity and related objects. The
+ * root Entity defines the boundary of the Aggregate. The objects within the
  * Aggregate are referred to as Aggregate members. All members must be accessed
  * through the root Entity so that consistency of the Aggregate can be
  * maintained.
  * <p>
- * Boundary - Each Aggregate has a clearly defined boundary that separates it
- * from other Aggregates. The boundary defines which objects are Aggregate
- * members and thus which operations and data are in the Aggregate and which are
- * not.
+ * Boundary - An Aggregate has a clearly defined boundary that separates it from
+ * other Aggregates. The boundary defines which objects are Aggregate members
+ * and thus which operations and data are in the Aggregate and which are not.
  * <p>
- * Identity - Each Aggregate has a unique identity that is represented by the
- * root Entity. Aggregate members need only to be distinguishable within the
- * boundary and therefore may have local identities.
+ * Identity - An Aggregate has a unique identity that is represented by the root
+ * Entity. Aggregate members need only to be distinguishable within the boundary
+ * and therefore may have local identities.
  * <p>
  * Consistency - Objects in the domain model are subject to domain rules. A more
  * concise term for domain rule is invariant. Invariants must be met to maintain
@@ -56,7 +55,7 @@ import java.lang.annotation.Target;
  * operations on the Aggregate and establishes that the Aggregate remains in a
  * consistent state when data changes.
  * <p>
- * Relationships - Objects that are outside the Aggregate and hold references to
+ * Relationships - Objects that are outside an Aggregate and hold references to
  * the Aggregate may only refer to the root Entity. Members of the aggregate may
  * refer to each other freely. If clients need to access Aggregate members, then
  * they must do so through the root Entity. Aggregate members may also refer to
@@ -68,14 +67,14 @@ import java.lang.annotation.Target;
  * maintain, and evolve over time. An important task is to determine reasonable
  * Aggregate boundaries. The following criteria may guide with modeling.
  * <p>
- * Consistency - Aggregates must remain in a consistent state when data changes.
- * If changes to an object could impact the consistency of other objects, then
- * they should be modeled as part of the same Aggregate.
+ * Consistency - An Aggregate must remain in a consistent state when data
+ * changes. If changes to an object could impact the consistency of other
+ * objects, then they should be modeled as part of the same Aggregate.
  * <p>
- * Transactions - Operations to Aggregates should be atomic, as part of a single
- * transaction. If changes to an Aggregate member require changes to other
- * objects outside the Aggregate, then these objects should be modeled as part
- * of the same Aggregate.
+ * Transactions - Operations to an Aggregate should be atomic, as part of a
+ * single transaction. If changes to an Aggregate member require changes to
+ * other objects outside the Aggregate, then these objects should be modeled as
+ * part of the same Aggregate.
  * <p>
  * Performance - Aggregate members should be accessed and modified together
  * frequently. If objects are accessed and modified independently, then they
@@ -86,12 +85,12 @@ import java.lang.annotation.Target;
  * belong to multiple aspects of the domain, then they should be part of
  * separate Aggregates.
  * <p>
- * Granularity - Aggregate boundaries should provide an appropriate granularity.
- * If an Aggregate is too broad, it could impact maintainability negatively. An
- * Aggregate that is too limited may not offer sufficient context for certain
- * use cases.
+ * Granularity - An Aggregate boundary should provide an appropriate
+ * granularity. If an Aggregate is too broad, it could impact maintainability
+ * negatively. An Aggregate that is too limited may not offer sufficient context
+ * for certain use cases.
  * <p>
- * Dependencies - Aggregate boundaries should be chosen to minimize
+ * Dependencies - An Aggregate boundary should be chosen to minimize
  * interdependencies among Aggregates. Tight coupling between Aggregates can
  * affect scalability and maintainability.
  * 
