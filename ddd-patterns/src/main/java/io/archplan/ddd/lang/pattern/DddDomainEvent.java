@@ -70,6 +70,13 @@ public @interface DddDomainEvent {
      */
     String value() default "";
 
+    /**
+     * Concise description of the Domain Event
+     * 
+     * @return a description or an empty string
+     */
+    String description() default "";
+
     // TODO document operation
     /**
      * The DDD aggregate, entity or service that emits the domain event

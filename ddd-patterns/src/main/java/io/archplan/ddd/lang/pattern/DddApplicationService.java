@@ -79,6 +79,13 @@ public @interface DddApplicationService {
     String value() default "";
 
     /**
+     * Concise description of the Application Service
+     * 
+     * @return a description or an empty string
+     */
+    String description() default "";
+
+    /**
      * Names of the Aggregates and Entities that are involved in the Application
      * Service logic
      * 

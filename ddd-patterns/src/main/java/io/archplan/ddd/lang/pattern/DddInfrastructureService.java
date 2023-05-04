@@ -35,7 +35,7 @@ import java.lang.annotation.Target;
  * requirement or goal.
  * <p>
  * Specifically, an Infrastructure Service has no significant meaning in the
- * domain and cover purely technical aspects. Domain and Application Services
+ * domain and covers purely technical aspects. Domain and Application Services
  * work together with Infrastructure Services. TODO
  * 
  * @author Udo Cirkel
@@ -75,6 +75,13 @@ public @interface DddInfrastructureService {
      * @return a name or an empty string
      */
     String value() default "";
+
+    /**
+     * Concise description of the Infrastructure Service
+     * 
+     * @return a description or an empty string
+     */
+    String description() default "";
 
     /**
      * Names of the Aggregates and Entities that are involved in the Infrastructure

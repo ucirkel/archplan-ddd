@@ -65,6 +65,13 @@ public @interface DddRepository {
     String value() default "";
 
     /**
+     * Concise description of the Repository
+     * 
+     * @return a description or an empty string
+     */
+    String description() default "";
+
+    /**
      * Name of the Aggregate or Entity that is managed by the Repository
      * 
      * @return a name or an empty string

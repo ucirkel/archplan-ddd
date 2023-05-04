@@ -75,6 +75,13 @@ public @interface DddExternalService {
     String value() default "";
 
     /**
+     * Concise description of the External Service
+     * 
+     * @return a description or an empty string
+     */
+    String description() default "";
+
+    /**
      * Names of the Aggregates and Entities that are involved in the External
      * Service logic
      * 

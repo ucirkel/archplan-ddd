@@ -66,6 +66,13 @@ public @interface DddModule {
     String value() default "";
 
     /**
+     * Concise description of the Module
+     * 
+     * @return a description or an empty string
+     */
+    String description() default "";
+
+    /**
      * Additional information that is related to the Module
      * <p>
      * The provided information is specified in key-value form, where keys may occur

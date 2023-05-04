@@ -63,9 +63,10 @@ import java.lang.annotation.Target;
  * <p>
  * <b>Modeling hints</b>
  * <p>
- * Aggregates help to create domain models that are easier to reason about,
- * maintain, and evolve over time. An important task is to determine reasonable
- * Aggregate boundaries. The following criteria may guide with modeling.
+ * Aggregates are useful to create domain models that are easier to reason
+ * about, maintain, and evolve over time. An important task is to determine
+ * reasonable Aggregate boundaries. The following criteria may guide with
+ * modeling.
  * <p>
  * Consistency - An Aggregate must remain in a consistent state when data
  * changes. If changes to an object could impact the consistency of other
@@ -136,6 +137,13 @@ public @interface DddAggregateRoot {
      * @return a name or an empty string
      */
     String value() default "";
+
+    /**
+     * Concise description of the root Entity
+     * 
+     * @return a description or an empty string
+     */
+    String description() default "";
 
     /**
      * Names of all Entities and Value Objects that are Aggregate members, excluding

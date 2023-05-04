@@ -72,6 +72,13 @@ public @interface DddEntity {
     String value() default "";
 
     /**
+     * Concise description of the Entity
+     * 
+     * @return a description or an empty string
+     */
+    String description() default "";
+
+    /**
      * Name of the Aggregate of which the Entity is a member, or an empty string if
      * the entity does not belong to any Aggregate
      * 
