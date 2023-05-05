@@ -27,9 +27,31 @@ import java.lang.annotation.Target;
  * Indicates that an annotated class represents a "Domain Event" as defined by
  * Domain-Driven Design (Eric Evans, 2003)
  * <p>
- * Event in the domain that is relevant for domain experts.
- * 
- * TODO
+ * A Domain Event is an abstraction for modeling a significant occurrence or
+ * change within the domain that is relevant for domain experts. The purpose of
+ * a Domain Event is to allow interested parties to respond to the event and
+ * take appropriate action.
+ * <p>
+ * <b>Characteristics</b>
+ * <p>
+ * Significant occurrence - A Domain Event represents a significant occurrence
+ * within the domain. This could be a change to the state of an Entity or an
+ * Aggregate, the completion of a business process, or the occurrence of a
+ * significant business event.
+ * <p>
+ * Immutable - A Domain Event is immutable. This ensures that the event is a
+ * true historical record of what happened in the domain.
+ * <p>
+ * Contextual - A Domain Event is specific to a particular Bounded Context. This
+ * allows to define Events that represent specific requirements of the context.
+ * <p>
+ * Published - A Domain Event is published, meaning that it is broadcasted to
+ * all interested parties within the domain. This allows other parts of the
+ * system and other systems to respond to the event and take appropriate action.
+ * <p>
+ * Asynchronous - A Domain Event is processed asynchronously. This allows the
+ * generating system to continue processing without waiting for the event to be
+ * handled.
  * 
  * @author Udo Cirkel
  * @since 1.0.0
